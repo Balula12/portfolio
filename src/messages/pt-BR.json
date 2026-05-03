@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "eyebrow": "Desenvolvedor Full-Stack",
+    "title": "Construo plataformas com Next.js, TypeScript e integrações de pagamento.",
+    "subtitle": "Há ~2 anos arquitetando sistemas distribuídos no GG Checkout — uma plataforma SaaS white-label que processa pagamentos via PIX, cartão e cripto.",
+    "ctaPrimary": "Ver projetos",
+    "ctaSecondary": "Entrar em contato"
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Ferramentas que uso no dia a dia",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "payments": "Pagamentos",
+      "infra": "Infra & DevOps"
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "current": "Atual",
+    "ggCheckout": {
+      "role": "Desenvolvedor Full-Stack",
+      "company": "GG Checkout",
+      "period": "04/2024 — atual",
+      "summary": "Plataforma SaaS white-label de checkout. Responsável direto por integrações com 12+ gateways de pagamento usando Factory + Abstract Class, mTLS com EfiBank, funil de upsell/downsell e Store Builder."
+    },
+    "freelance": {
+      "role": "Desenvolvedor Full-Stack",
+      "company": "Projetos Freelance",
+      "period": "2023",
+      "summary": "Plataformas web com React/Next.js, integrações com Stripe e Mercado Pago, e sistemas com Firebase."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "moreOnGithub": "Mais projetos no GitHub"
+  },
+  "theme": {
+    "toggle": "Alternar tema"
+  },
+  "locale": {
+    "switch": "Idioma"
+  }
+}
