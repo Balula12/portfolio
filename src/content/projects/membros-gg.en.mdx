@@ -1,0 +1,34 @@
+---
+title: GG Members Area
+summary: Customizable members area system with modules, lessons, certificates and progress tracking.
+role: Full-Stack Developer
+period: "2025"
+order: 3
+stack:
+  - Next.js
+  - TypeScript
+  - Firebase / Firestore
+  - Framer Motion
+  - TailwindCSS
+highlights:
+  - Hierarchical structure (classes → modules → lessons) with per-student progress
+  - Certificates generated upon 100% completion
+  - Full visual customization (colors, logo, layout) per producer
+  - Automated digital delivery after payment confirmation
+---
+
+## Context
+
+Sellers using GG Checkout to sell courses needed a place to deliver the content. Instead
+of redirecting to third-party platforms, we built a native members area — students pay
+and land directly on the content, with no friction.
+
+## Technical notes
+
+Data modeling was the heaviest part. Each class has modules, each module has lessons,
+each student has per-lesson progress — and all of it must be queryable both by the student
+(what they've watched) and by the producer (engagement per lesson). Solved with a
+combination of Firestore subcollections + pre-computed aggregations for heavy queries.
+
+Visual customization is solved with CSS tokens published into `<head>` per producer — the
+same JS bundle runs for everyone, but each one sees the correct theme.

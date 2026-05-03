@@ -38,6 +38,29 @@
       "summary": "Plataformas web com React/Next.js, integrações com Stripe e Mercado Pago, e sistemas com Firebase."
     }
   },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Cases profissionais e experimentos pessoais que mostram como eu construo software."
+  },
+  "project": {
+    "highlights": "Destaques",
+    "stack": "Stack",
+    "links": {
+      "live": "Ver ao vivo",
+      "demo": "Demo",
+      "source": "Código no GitHub"
+    }
+  },
+  "about": {
+    "title": "Sobre",
+    "p1": "Sou Gustavo Balula, desenvolvedor full-stack com cerca de 2 anos de experiência profissional. Trabalho atualmente no GG Checkout — uma plataforma SaaS white-label que processa pagamentos via PIX, cartão e cripto pra vendedores de produtos digitais.",
+    "p2": "No dia a dia eu arquiteto e implemento integrações com gateways de pagamento usando padrões como Factory e Abstract Class, além de construir features completas como funis de upsell/downsell, Store Builder, área de membros e sistemas de notificação multi-canal via WhatsApp Business API.",
+    "p3": "Estudo Análise e Desenvolvimento de Sistemas (Cruzeiro do Sul Virtual, em andamento). Inglês avançado. Curiosidade insaciável por sistemas distribuídos, observabilidade e a interseção entre design system e developer experience."
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Disponível pra conversar sobre oportunidades, freelas ou só pra trocar ideia."
+  },
   "footer": {
     "rights": "Todos os direitos reservados",
     "moreOnGithub": "Mais projetos no GitHub"

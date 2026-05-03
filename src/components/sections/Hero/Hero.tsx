@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { buttonVariants } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+import { HeroActions } from "./HeroActions";
 
 export async function Hero() {
   const t = await getTranslations("hero");
@@ -16,14 +15,7 @@ export async function Hero() {
       <p className="max-w-2xl text-balance text-lg text-muted-foreground">
         {t("subtitle")}
       </p>
-      <div className="flex flex-wrap gap-3 pt-2">
-        <Link href="/projetos" className={buttonVariants({ size: "lg" })}>
-          {t("ctaPrimary")}
-        </Link>
-        <Link href="/contato" className={buttonVariants({ variant: "outline", size: "lg" })}>
-          {t("ctaSecondary")}
-        </Link>
-      </div>
+      <HeroActions />
     </section>
   );
 }

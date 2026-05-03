@@ -1,0 +1,36 @@
+---
+title: GG Admin
+summary: GG Checkout admin dashboard with realtime Firebase → ClickHouse synchronization.
+role: Full-Stack Developer
+period: 2025 — present
+order: 2
+stack:
+  - Next.js
+  - TypeScript
+  - Firebase / Firestore
+  - ClickHouse
+  - React Query
+  - Zustand
+  - Radix UI
+highlights:
+  - Realtime sync between Firestore (transactional) and ClickHouse (analytical)
+  - Sales, conversion rate and per-gateway performance dashboards
+  - Global state with Zustand for filters persistent across routes
+  - Parallel queries with React Query and shared cache
+---
+
+## Why it exists
+
+Firestore is great for transactional writes (high throughput, realtime listeners), but
+poor for analytical queries at scale. As GG Checkout grew, reports became slow —
+aggregations over millions of transactions in Firestore don't scale.
+
+The solution was to split transactional and analytical concerns: Firestore remains the
+source of truth, and a sync pipeline replicates data to ClickHouse, which is optimized
+for OLAP queries. The dashboard queries ClickHouse for all reports.
+
+## Outcome
+
+Dashboards that used to take seconds to load now respond in milliseconds. ClickHouse also
+unlocks richer analyses (funnels, cohorts, time series) that would be unfeasible on
+Firestore.

@@ -1,0 +1,50 @@
+---
+title: GG Checkout
+summary: White-label SaaS checkout platform for digital product sellers.
+role: Full-Stack Developer
+period: 04/2024 — present
+order: 1
+featured: true
+stack:
+  - Next.js
+  - TypeScript
+  - Firebase / Firestore
+  - Redis (Upstash)
+  - Stripe
+  - Mercado Pago
+  - Pagar.me
+  - EfiBank
+  - WhatsApp Business API
+highlights:
+  - Integration with 12+ payment gateways (Stripe, Mercado Pago, Pagar.me, EfiBank, PagouAI, TriboPay, Bestfy, Beehive, OrbitaPay, SigiloPay, IronPay, SillientPay) using Factory + Abstract Class
+  - mTLS authentication with PEM certificates for the EfiBank gateway
+  - Sales funnel (upsell/downsell) with server-side cookie persistence and bypass prevention
+  - Store Builder with sliders, color pickers, blocks, custom domains and header configuration
+  - Internationalization (i18n) across 27+ gateway forms with next-intl
+  - Migration of cache strategy from ISR to centralized Redis
+  - Coupon system with automatic currency conversion for international checkouts
+---
+
+## Context
+
+GG Checkout is a SaaS platform digital product sellers use to receive payments via PIX,
+credit card, boleto and cryptocurrencies. The platform is white-label — each seller
+configures their store, flow, gateways and even custom domain.
+
+## My contribution
+
+I'm directly responsible for most of the platform's gateway integrations. The core
+challenge was standardizing communication with heterogeneous financial APIs — each gateway
+has its own auth model, webhook format, error policy and SLA — without the rest of the
+application caring about those differences.
+
+The solution was an **Abstract Class + Factory** pattern: each gateway implements the same
+contract (create payment, process webhook, refund, etc.), and the central orchestrator
+dynamically selects the right implementation per seller. This let us add new gateways in
+hours instead of days, and isolate gateway-specific bugs without affecting the others.
+
+## Beyond the stack
+
+Production security practices: **centralized rate limiting**, **disposable email/domain
+blocklist**, JWT validation, token encryption between services, and the **PIX receipt
+upload** with realtime listener for automatic confirmation.
