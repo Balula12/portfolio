@@ -1,10 +1,15 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
+
+const LOCALE_LABELS: Record<string, string> = {
+  "pt-BR": "PT",
+  en: "EN",
+};
 
 export function LocaleSwitcher() {
   const locale = useLocale();
@@ -14,7 +19,6 @@ export function LocaleSwitcher() {
   const t = useTranslations("locale");
 
   const otherLocale = routing.locales.find((l) => l !== locale) ?? locale;
-  const label = otherLocale === "pt-BR" ? "PT" : "EN";
 
   return (
     <Button
@@ -28,7 +32,7 @@ export function LocaleSwitcher() {
         });
       }}
     >
-      {label}
+      {LOCALE_LABELS[otherLocale] ?? otherLocale}
     </Button>
   );
 }

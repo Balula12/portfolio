@@ -1,0 +1,50 @@
+---
+title: GG Checkout
+summary: Plataforma SaaS white-label de checkout para vendedores de produtos digitais.
+role: Desenvolvedor Full-Stack
+period: 04/2024 — atual
+order: 1
+featured: true
+stack:
+  - Next.js
+  - TypeScript
+  - Firebase / Firestore
+  - Redis (Upstash)
+  - Stripe
+  - Mercado Pago
+  - Pagar.me
+  - EfiBank
+  - WhatsApp Business API
+highlights:
+  - Integração com 12+ gateways de pagamento (Stripe, Mercado Pago, Pagar.me, EfiBank, PagouAI, TriboPay, Bestfy, Beehive, OrbitaPay, SigiloPay, IronPay, SillientPay) usando Factory + Abstract Class
+  - Autenticação mTLS com certificados PEM para o gateway EfiBank
+  - Sistema de funil de vendas (upsell/downsell) com persistência server-side de cookies e prevenção de bypass
+  - Store Builder com sliders, color pickers, blocos, custom domains e configuração de header
+  - Internacionalização (i18n) em 27+ formulários de gateway com next-intl
+  - Migração de cache de ISR para Redis centralizado
+  - Sistema de cupons com conversão automática de moeda para checkouts internacionais
+---
+
+## Contexto
+
+O GG Checkout é uma plataforma SaaS que vendedores de produtos digitais usam para receber
+pagamentos via PIX, cartão de crédito, boleto e criptomoedas. A plataforma é white-label —
+cada vendedor configura sua loja, fluxo, gateways e até domínio próprio.
+
+## Minha contribuição
+
+Sou responsável direto pela maioria das integrações de gateway da plataforma. O desafio
+central foi padronizar comunicação com APIs financeiras heterogêneas — cada gateway tem
+seu próprio modelo de autenticação, formato de webhook, política de erros e SLA — sem que
+o resto da aplicação precisasse se importar com essas diferenças.
+
+A solução foi um padrão **Abstract Class + Factory**: cada gateway implementa o mesmo
+contrato (criar pagamento, processar webhook, refund, etc.), e o orquestrador central
+seleciona dinamicamente a implementação certa por vendedor. Isso permitiu adicionar novos
+gateways em horas em vez de dias, e isolar bugs de um gateway sem afetar os outros.
+
+## Ferramentas além da stack
+
+Práticas de segurança em produção: **rate limiting centralizado**, **blocklist de domínios
+descartáveis**, validação JWT, criptografia de tokens entre serviços e o **upload de
+comprovante PIX** com listener realtime para confirmação automática.

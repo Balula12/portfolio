@@ -1,0 +1,39 @@
+---
+title: Ping Pong 3D
+summary: 3D ping pong game in vanilla JavaScript with Three.js — single-player vs AI.
+role: Personal project
+period: "2026"
+order: 4
+stack:
+  - JavaScript
+  - Three.js
+  - WebGL
+  - HTML5
+highlights:
+  - 3D rendering with Three.js (PCF shadows, ACES tone mapping, fog)
+  - Modular engine in 5 files (scene, ball, paddle, score, main)
+  - AI opponent with simple trajectory-prediction logic
+  - No build tool — native ES modules via CDN importmap in the original
+---
+
+## Why it exists
+
+I wanted to exercise Three.js outside the React Three Fiber context, writing the render
+loop and game logic from scratch. It came out small (~25KB) but with basic physics,
+collision detection, dynamic shadows and UI overlaid on the canvas.
+
+## Technical decisions
+
+- **No React** in the engine — to avoid paying reconciliation cost in the game loop. Kept
+  it vanilla and only touch the DOM for the score and pause overlay.
+- **5 modules by concern**: scene (light, camera, table), ball (physics and reset), paddle
+  (input and bot), score, and the main that orchestrates everything.
+- **No state management** — game state is a mutable struct passed between modules, because
+  the game loop rewrites almost everything every frame.
+
+## Migrating to the portfolio
+
+In the original project Three.js loaded via CDN importmap. To integrate here in the
+portfolio (Next.js 16) the imports were swapped for the npm package and the engine got
+wrapped in a Client Component (`PongCanvas`) that mounts the canvas and initializes
+everything in a `useEffect`.
