@@ -73,6 +73,11 @@
       "pause": "pausar"
     }
   },
+  "envBadge": {
+    "ariaLabel": "Ambiente do build atual",
+    "preview": "Preview",
+    "development": "Dev"
+  },
   "footer": {
     "rights": "Todos os direitos reservados",
     "moreOnGithub": "Mais projetos no GitHub"

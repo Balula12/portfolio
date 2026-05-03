@@ -73,6 +73,11 @@
       "pause": "pause"
     }
   },
+  "envBadge": {
+    "ariaLabel": "Current build environment",
+    "preview": "Preview",
+    "development": "Dev"
+  },
   "footer": {
     "rights": "All rights reserved",
     "moreOnGithub": "More projects on GitHub"
