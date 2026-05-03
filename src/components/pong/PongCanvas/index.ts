@@ -1,0 +1,1 @@
+export { PongCanvas } from "./PongCanvas";

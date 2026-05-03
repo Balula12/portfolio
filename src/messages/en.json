@@ -61,6 +61,18 @@
     "title": "Contact",
     "subtitle": "Open to discuss opportunities, freelance work, or just to chat."
   },
+  "pong": {
+    "back": "Back",
+    "pause": "Pause",
+    "resume": "Resume",
+    "paused": "PAUSED",
+    "resumeHint": "Press space or click the button to continue",
+    "playCta": "Play now",
+    "controls": {
+      "move": "move paddle",
+      "pause": "pause"
+    }
+  },
   "footer": {
     "rights": "All rights reserved",
     "moreOnGithub": "More projects on GitHub"
