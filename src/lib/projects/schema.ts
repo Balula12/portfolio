@@ -16,6 +16,10 @@ export const projectFrontmatterSchema = z.object({
       demo: z.string().url().optional(),
     })
     .optional(),
+  playground: z
+    .string()
+    .startsWith("/", "Caminho interno deve começar com /")
+    .optional(),
   featured: z.boolean().default(false),
   order: z.number().default(99),
 });

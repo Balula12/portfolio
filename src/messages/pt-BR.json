@@ -61,6 +61,18 @@
     "title": "Contato",
     "subtitle": "Disponível pra conversar sobre oportunidades, freelas ou só pra trocar ideia."
   },
+  "pong": {
+    "back": "Voltar",
+    "pause": "Pausar",
+    "resume": "Retomar",
+    "paused": "PAUSADO",
+    "resumeHint": "Espaço ou clique no botão para continuar",
+    "playCta": "Jogar agora",
+    "controls": {
+      "move": "mover raquete",
+      "pause": "pausar"
+    }
+  },
   "footer": {
     "rights": "Todos os direitos reservados",
     "moreOnGithub": "Mais projetos no GitHub"

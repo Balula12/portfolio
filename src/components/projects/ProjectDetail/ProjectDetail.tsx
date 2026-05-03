@@ -3,6 +3,7 @@ import { MDXContent } from "@/components/projects/MDXContent";
 import { ProjectDetailHero } from "./ProjectDetailHero";
 import { ProjectDetailHighlights } from "./ProjectDetailHighlights";
 import { ProjectDetailLinks } from "./ProjectDetailLinks";
+import { ProjectDetailPlayground } from "./ProjectDetailPlayground";
 import { ProjectDetailStack } from "./ProjectDetailStack";
 
 type Props = {
@@ -20,6 +21,9 @@ export function ProjectDetail({ project }: Props) {
         role={project.role}
         period={project.period}
       />
+      {project.playground && (
+        <ProjectDetailPlayground href={project.playground} />
+      )}
       <ProjectDetailHighlights items={project.highlights} />
       <ProjectDetailStack items={project.stack} />
       {project.links && <ProjectDetailLinks links={project.links} />}
